@@ -1,0 +1,108 @@
+.NearestMatchesBlock {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.NearestMatches {
+    background-color: #BB8796;
+    border-radius: 20px;
+    margin-top: 160px;
+    margin-left: 120px;
+    margin-right: 120px;
+    padding: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.NearestMatch {
+    background-color: white;
+    border-radius: 15px;
+    margin: 10px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    justify-items: center;
+    align-items: center;
+}
+
+.Country {
+    text-align: center;
+}
+
+.Flag {
+    border: 1px solid black;
+    border-radius: 8px;
+    height: auto;
+    width: auto;
+}
+
+.CountryName {
+    margin: 0;
+    font-family: 'Inter';
+    font-size: 15px;
+}
+
+.Score {
+    text-align: center;
+}
+
+.NewsBlockTitle {
+    margin-left: 120px;
+    color: #8D0930;
+    font-family: 'Inter';
+    font-size: 40px;
+}
+
+.NewsBlock {
+    margin-left: 120px;
+    margin-right: 120px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: masonry;
+    column-gap: 30px;
+    row-gap: 30px;
+    margin-bottom: 30px;
+}
+
+.News {
+    background-color: #BB8796;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.NewsTitle {
+    margin: 10px;
+    padding: 0;
+    font-size: 30px;
+}
+
+.NewsImg {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.NewsText {
+    margin: 10px;
+    padding: 0;
+    font-size: 20px;
+}
+
+@media (max-width: 1350px) {
+    .NearestMatches {
+        margin-top: 380px;
+        grid-template-columns: 1fr;
+    }
+
+    .NewsBlock {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 900px) {
+    .NewsBlock {
+        grid-template-columns: 1fr;
+    }
+}

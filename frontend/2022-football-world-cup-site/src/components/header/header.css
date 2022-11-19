@@ -1,0 +1,61 @@
+header {
+    background-color: #8D0930;
+    background: linear-gradient(90deg, #8D0930 0%, #440317 100%);
+    margin: 0;
+    padding: 0;
+    top: 0;
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    display: grid;
+    grid-template-columns: 400px 1fr 100px;
+    justify-items: right;
+    align-items: center;
+}
+
+.Menu {
+    margin-left: 50px;
+    width: 800px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.HomeButton {
+    color: white;
+    text-decoration: none;
+    font-family: 'Inter';
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.MenuButton {
+    color: white;
+    text-decoration: none;
+    font-family: 'Inter';
+    font-size: 25px;
+}
+
+.LoginImg {
+    margin: 20px;
+    width: 70px;
+    height: auto;
+    border: 0;
+}
+
+@media (max-width: 1350px) {
+    header {
+        grid-template-columns: 1fr;
+        position: absolute;
+        height: auto;
+        justify-items: center;
+    }
+
+    .Menu {
+        margin-left: 0;
+        margin-top: 10px;
+        row-gap: 10px;
+        width: auto;
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+}

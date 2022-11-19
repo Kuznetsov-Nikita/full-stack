@@ -1,0 +1,47 @@
+.PredictionsWrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin-top: 160px;
+}
+
+.PredictionsElement {
+    font-family: 'Inter';
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    padding: 10px;
+    background-color: #BB8796;
+    border-radius: 20px;
+}
+
+.PredictionsTitle {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.PredicitionsList {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.RaitingTable {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+    background-color: white;
+    border: 1px solid black;
+    width: 90%;
+}
+
+.RaitingTableRow {
+    height: 40px;
+}
+
+@media (max-width: 1350px) {
+    .PredictionsWrapper {
+        margin-top: 380px;
+        grid-template-columns: 1fr;
+    }
+}

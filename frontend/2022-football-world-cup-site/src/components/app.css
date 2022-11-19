@@ -1,0 +1,10 @@
+body {
+    background-image: url("../../public/background.png");
+    background-size: 1920px;
+    background-color: #D6D6D3;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position-x: -650px;
+    background-position-y: -160px;
+    margin: 0;
+}

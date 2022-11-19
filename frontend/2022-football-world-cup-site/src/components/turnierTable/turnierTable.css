@@ -1,0 +1,47 @@
+.TurnierTables {
+    margin-top: 160px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    row-gap: 30px;
+    margin-bottom: 50px;
+}
+
+.GroupTable {
+    background-color: white;
+    border: 1px solid black;
+    width: 450px;
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid black;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+tr {
+    border: none;
+    padding: 0;
+    margin: 0;
+    line-height: 11px;
+}
+
+.GroupCell {
+    text-align: center;
+    font-family: 'Inter';
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.BlockedCell {
+    background-color: #D6D6D3;
+}
+
+@media (max-width: 1350px) {
+    .TurnierTables {
+        grid-template-columns: 1fr;
+        margin-top: 380px;
+    }
+}

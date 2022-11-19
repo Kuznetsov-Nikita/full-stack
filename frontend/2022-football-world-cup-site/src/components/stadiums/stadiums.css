@@ -1,0 +1,38 @@
+.StadiumsWrapper {
+    margin-top: 160px;
+    margin-left: 120px;
+    margin-right: 120px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 10px;
+    column-gap: 10px;
+}
+
+.Stadium {
+    background-color: #BB8796;
+    border-radius: 20px;
+    text-align: center;
+    padding: 10px;
+    font-family: 'Inter';
+    font-size: 25px;
+    margin: 30px;
+}
+
+.StadiumImage {
+    width: 90%;
+    height: auto;
+    border-radius: 15px;
+}
+
+@media (max-width: 1350px) {
+    .StadiumsWrapper {
+        margin-top: 380px;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 900px) {
+    .StadiumsWrapper {
+        grid-template-columns: 1fr;
+    }
+}

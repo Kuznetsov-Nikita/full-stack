@@ -1,0 +1,48 @@
+.CommandsWrapper {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    row-gap: 30px;
+}
+
+.CommandsMenu {
+    font-family: 'Inter';
+    background-color: #BB8796;
+    margin-top: 100px;
+    padding: 30px;
+    width: 200px;
+}
+
+.CommandInfo {
+    font-size: 30px;
+    font-family: 'Inter';
+    margin: 7%;
+    padding: 2%;
+    margin-top: 160px;
+    background-color: #BB8796;
+    border-radius: 20px;
+    height: fit-content;
+}
+
+.CommandCountry {
+    display: table;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.CommandImage {
+    border-radius: 10px;
+    display: table;
+    margin: 0 auto;
+    width: 90%;
+    height: auto;
+}
+
+@media (max-width: 1350px) {
+    .CommandsMenu {
+        margin-top: 330px;
+    }
+
+    .CommandInfo {
+        margin-top: 380px;
+    }
+}
