@@ -1,4 +1,5 @@
 import "./app.css";
+import AuthContext, {AuthProvider} from "../context/AuthContext"
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom"
 import Header from "./header/Header";
 import MainPage from "./mainPage/MainPage";
@@ -9,42 +10,7 @@ import Predictions from "./predictions/Predictions";
 import Login from "./login/Login";
 import {useState, useEffect} from 'react';
 
-const commands = [
-  {id: 1, country: "Австралия", image: "/teams/australia_team.jpg", info: "Информация о команде"},
-  {id: 2, country: "Англия", image: "", info: "Информация о команде"},
-  {id: 3, country: "Аргентина", image: "", info: "Информация о команде"},
-  {id: 4, country: "Бельгия", image: "", info: "Информация о команде"},
-  {id: 5, country: "Бразилия", image: "", info: "Информация о команде"},
-  {id: 6, country: "Гана", image: "", info: "Информация о команде"},
-  {id: 7, country: "Германия", image: "", info: "Информация о команде"},
-  {id: 8, country: "Дания", image: "", info: "Информация о команде"},
-  {id: 9, country: "Иран", image: "", info: "Информация о команде"},
-  {id: 10, country: "Испания", image: "", info: "Информация о команде"},
-  {id: 11, country: "Камерун", image: "", info: "Информация о команде"},
-  {id: 12, country: "Канада", image: "", info: "Информация о команде"},
-  {id: 13, country: "Катар", image: "", info: "Информация о команде"},
-  {id: 14, country: "Коста-Рика", image: "", info: "Информация о команде"},
-  {id: 15, country: "Марокко", image: "", info: "Информация о команде"},
-  {id: 16, country: "Мексика", image: "", info: "Информация о команде"},
-  {id: 17, country: "Нидерланды", image: "", info: "Информация о команде"},
-  {id: 18, country: "Польша", image: "", info: "Информация о команде"},
-  {id: 19, country: "Португалия", image: "", info: "Информация о команде"},
-  {id: 20, country: "Республика Корея", image: "", info: "Информация о команде"},
-  {id: 21, country: "Саудовская Аравия", image: "", info: "Информация о команде"},
-  {id: 22, country: "Сенегал", image: "", info: "Информация о команде"},
-  {id: 23, country: "Сербия", image: "", info: "Информация о команде"},
-  {id: 24, country: "США", image: "", info: "Информация о команде"},
-  {id: 25, country: "Тунис", image: "", info: "Информация о команде"},
-  {id: 26, country: "Уругвай", image: "", info: "Информация о команде"},
-  {id: 27, country: "Уэльс", image: "", info: "Информация о команде"},
-  {id: 28, country: "Франция", image: "", info: "Информация о команде"},
-  {id: 29, country: "Хорватия", image: "", info: "Информация о команде"},
-  {id: 30, country: "Швейцария", image: "", info: "Информация о команде"},
-  {id: 31, country: "Эквадор", image: "", info: "Информация о команде"},
-  {id: 32, country: "Япония", image: "", info: "Информация о команде"},
-]
-
-const startCommand = {id: 1, country: "Австралия", image: "/teams/australia_team.jpg", info: "Информация о команде"}
+const baseUrl = "http://127.0.0.1:8000/"
 
 const startUsers = [
   {id: 0, nickname: "", predictionsCnt: 0, predictions: [], score: 0},
@@ -53,8 +19,50 @@ const startUsers = [
 const startUser = {id: 0, nickname: "", predictionsCnt: 0, predictions: [], score: 0}
 
 function App() {
-  const [command, setCommand] = useState(startCommand)
+  const [nearestMatches, setNearestMatches] = useState([])
+  useEffect(() => { 
+    fetch(baseUrl + 'api/get_upcoming_matches/')
+    .then(res => res.json())
+    .then(data => {
+      if (data.length == 0) {
+        fetch(baseUrl + 'api/get_finished_matches/')
+        .then(res => res.json())
+        .then(data => setNearestMatches(data.slice(data.length - 3)))
+      } else {
+        setNearestMatches(data.slice(0, 3))
+      }
+    })
+  }, [])
 
+  const [upcomingMatches, setUpcomingMatches] = useState([])
+  useEffect(() => { 
+    fetch(baseUrl + 'api/get_upcoming_matches/')
+    .then(res => res.json())
+    .then(data => setUpcomingMatches(data))
+  }, [])
+
+  const [news, setNews] = useState([])
+  useEffect(() => { 
+    fetch(baseUrl + 'api/get_all_news/')
+    .then(res => res.json())
+    .then(data => setNews(data))
+  }, [])
+
+  const [stadiums, setStadiums] = useState([])
+  useEffect(() => { 
+    fetch(baseUrl + 'api/get_all_stadiums/')
+    .then(res => res.json())
+    .then(data => setStadiums(data))
+  }, [])
+
+  const [commands, setCommands] = useState([])
+  useEffect(() => { 
+    fetch(baseUrl + 'api/get_all_commands/')
+    .then(res => res.json())
+    .then(data => setCommands(data))
+  }, [])
+
+  const [command, setCommand] = useState({})
   useEffect(() => {
       const row = localStorage.getItem('command')
       setCommand(JSON.parse(row))
@@ -80,6 +88,11 @@ function App() {
   }, [user])
 
   const [users, setUsers] = useState(startUsers)
+  useEffect(() => { 
+    fetch(baseUrl + 'api/get_profiles/')
+    .then(res => res.json())
+    .then(data => setUsers(data))
+  }, [])
 
   useEffect(() => {
     const row = localStorage.getItem('users')
@@ -91,20 +104,22 @@ function App() {
   }, [users])
 
   return (
-    <div className="App">
-      <Header className="Header"/>
+    <AuthProvider>
+      <div className="App">
+        <Header className="Header"/>
 
-      <Router>
-      <Routes>
-        <Route path='/' element={<MainPage/>}/>
-        <Route path='/tournier-table' element={<TurnierTable/>}/>
-        <Route path='/stadiums' element={<Stadiums/>}/>
-        <Route path='/commands' element={<Commands command={command} commands={commands} changeCommand={changeCommand}/>}/>
-        <Route path='/predictions' element={<Predictions user={user} users={users}/>}/>
-        <Route path='/login' element={<Login/>}/>
-      </Routes>
-      </Router>
-    </div>
+        <Router>
+        <Routes>
+          <Route path='/' element={<MainPage nearestMatches={nearestMatches} news={news}/>}/>
+          <Route path='/tournier-table' element={<TurnierTable/>}/>
+          <Route path='/stadiums' element={<Stadiums stadiums={stadiums}/>}/>
+          <Route path='/commands' element={<Commands command={command} commands={commands} changeCommand={changeCommand}/>}/>
+          <Route path='/predictions' element={<Predictions user={user} users={users} matches={upcomingMatches}/>}/>
+          <Route path='/login' element={<Login/>}/>
+        </Routes>
+        </Router>
+      </div>
+    </AuthProvider>
   );
 }
 

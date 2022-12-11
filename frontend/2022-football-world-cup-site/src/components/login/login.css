@@ -11,6 +11,19 @@
     width: 400px;
 }
 
+.RegisterForm {
+    display: table;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #BB8796;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    font-family: 'Inter';
+    width: 400px;
+}
+
 @media (max-width: 1350px) {
     .LoginForm {
         margin-top: 380px;

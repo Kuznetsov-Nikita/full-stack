@@ -2,11 +2,12 @@ import NearestMatchesBlock from "./NearestMatchesBlock";
 import NewsBlock from "./NewsBlock";
 import "./mainPage.css"
 
-function MainPage() {
+function MainPage(props) {
+    const {nearestMatches, news} = props
     return (
         <main>
-            <NearestMatchesBlock className="NearestMatchesBlock"/>
-            <NewsBlock/>
+            <NearestMatchesBlock className="NearestMatchesBlock" nearestMatches={nearestMatches}/>
+            <NewsBlock news={news}/>
         </main>
     );
 }

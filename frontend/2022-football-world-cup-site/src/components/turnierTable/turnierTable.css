@@ -14,6 +14,172 @@
     border-collapse: collapse;
 }
 
+.GroupScoresTables {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    row-gap: 30px;
+    margin-bottom: 50px;
+}
+
+.GroupScoresTable {
+    background-color: white;
+    width: auto;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.PlayOffTable {
+    position: relative;
+    margin-bottom: 50px;
+    width: 1900px;
+}
+.OE1 {
+    background-color: white;
+    border: 1px solid black;
+    border-collapse: collapse;
+    position: absolute;
+    z-index: -1;
+    left: 100px;
+    top: 50px;
+}
+.OE2 {
+    background-color: white;
+    border: 1px solid black;
+    border-collapse: collapse;
+    position: absolute;
+    z-index: -1;
+    left: 100px;
+    top: 250px;
+}
+.OE3 {
+    background-color: white;
+    border: 1px solid black;
+    border-collapse: collapse;
+    position: absolute;
+    z-index: -1;
+    left: 100px;
+    top: 450px;
+}
+.OE4 {
+    background-color: white;
+    border: 1px solid black;
+    border-collapse: collapse;
+    position: absolute;
+    z-index: -1;
+    left: 100px;
+    top: 650px;
+}
+.OE5 {
+    background-color: white;
+    border: 1px solid black;
+    border-collapse: collapse;
+    position: absolute;
+    z-index: -1;
+    left: 100px;
+    top: 850px;
+}
+.OE6 {
+    background-color: white;
+    border: 1px solid black;
+    border-collapse: collapse;
+    position: absolute;
+    z-index: -1;
+    left: 100px;
+    top: 1050px;
+}
+.OE7 {
+    background-color: white;
+    border: 1px solid black;
+    border-collapse: collapse;
+    position: absolute;
+    z-index: -1;
+    left: 100px;
+    top: 1250px;
+}
+.OE8 {
+    background-color: white;
+    border: 1px solid black;
+    border-collapse: collapse;
+    position: absolute;
+    z-index: -1;
+    left: 100px;
+    top: 1450px;
+}
+.Q1 {
+    background-color: white;
+    border: 1px solid black;
+    border-collapse: collapse;
+    position: absolute;
+    z-index: -1;
+    left: 500px;
+    top: 150px;
+}
+.Q2 {
+    background-color: white;
+    border: 1px solid black;
+    border-collapse: collapse;
+    position: absolute;
+    z-index: -1;
+    left: 500px;
+    top: 550px;
+}
+.Q3 {
+    background-color: white;
+    border: 1px solid black;
+    border-collapse: collapse;
+    position: absolute;
+    z-index: -1;
+    left: 500px;
+    top: 950px;
+}
+.Q4 {
+    background-color: white;
+    border: 1px solid black;
+    border-collapse: collapse;
+    position: absolute;
+    z-index: -1;
+    left: 500px;
+    top: 1350px;
+}
+.S1 {
+    background-color: white;
+    border: 1px solid black;
+    border-collapse: collapse;
+    position: absolute;
+    z-index: -1;
+    left: 900px;
+    top: 350px;
+}
+.S2 {
+    background-color: white;
+    border: 1px solid black;
+    border-collapse: collapse;
+    position: absolute;
+    z-index: -1;
+    left: 900px;
+    top: 1150px;
+}
+.TP {
+    background-color: white;
+    border: 1px solid black;
+    border-collapse: collapse;
+    position: absolute;
+    z-index: -1;
+    left: 1500px;
+    top: 1150px;
+}
+.F {
+    background-color: white;
+    border: 1px solid black;
+    border-collapse: collapse;
+    position: absolute;
+    z-index: -1;
+    left: 1300px;
+    top: 750px;
+}
+
 td {
     border: 1px solid black;
     padding: 0;
@@ -26,6 +192,16 @@ tr {
     padding: 0;
     margin: 0;
     line-height: 11px;
+    font-size: 20px;
+}
+
+.WinnerRow {
+    border: 5px;
+    padding: 0;
+    margin: 0;
+    line-height: 11px;
+    font-size: 20px;
+    background-color: lightgreen;
 }
 
 .GroupCell {
@@ -43,5 +219,15 @@ tr {
     .TurnierTables {
         grid-template-columns: 1fr;
         margin-top: 380px;
+    }
+
+    .GroupScoresTables {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 900px) {
+    .GroupScoresTables {
+        grid-template-columns: 1fr;
     }
 }
