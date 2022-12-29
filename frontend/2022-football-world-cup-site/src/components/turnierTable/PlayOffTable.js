@@ -64,25 +64,25 @@ function PlayOffTable() {
 
 
             <table className="S1">
-                <tr><td className="FlagCell"><img src={"/flags/argentina.png"}/></td><td width="150px">Аргентина</td><td width="80px"></td></tr>
-                <tr><td className="FlagCell"><img src={"/flags/chroatia.png"}/></td><td>Хорватия</td><td></td></tr>
+                <tr><td className="FlagCell"><img src={"/flags/argentina.png"}/></td><td width="150px">Аргентина</td><td width="80px">3</td></tr>
+                <tr><td className="FlagCell"><img src={"/flags/chroatia.png"}/></td><td>Хорватия</td><td>0</td></tr>
             </table>
 
             <table className="S2">
-                <tr><td className="FlagCell"><img src={"/flags/france.png"}/></td><td width="150px">Франция</td><td width="80px"></td></tr>
-                <tr><td className="FlagCell"><img src={"/flags/marocco.png"}/></td><td>Марокко</td><td></td></tr>
+                <tr><td className="FlagCell"><img src={"/flags/france.png"}/></td><td width="150px">Франция</td><td width="80px">2</td></tr>
+                <tr><td className="FlagCell"><img src={"/flags/marocco.png"}/></td><td>Марокко</td><td>0</td></tr>
             </table>
 
 
             <table className="TP">
-                <tr><td className="FlagCell"><img src={"/flags/.png"}/></td><td width="150px"></td><td width="80px"></td></tr>
-                <tr><td className="FlagCell"><img src={"/flags/.png"}/></td><td></td><td></td></tr>
+                <tr><td className="FlagCell"><img src={"/flags/chroatia.png"}/></td><td width="150px">Хорватия</td><td width="80px">2</td></tr>
+                <tr><td className="FlagCell"><img src={"/flags/marocco.png"}/></td><td>Марокко</td><td>1</td></tr>
             </table>
 
 
             <table className="F">
-                <tr><td className="FlagCell"><img src={"/flags/.png"}/></td><td width="150px"></td><td width="80px"></td></tr>
-                <tr><td className="FlagCell"><img src={"/flags/.png"}/></td><td></td><td></td></tr>
+                <tr><td className="FlagCell"><img src={"/flags/argentina.png"}/></td><td width="150px">Аргентина</td><td width="80px">3 (пен.4)</td></tr>
+                <tr><td className="FlagCell"><img src={"/flags/france.png"}/></td><td>Франция</td><td>3 (пен. 2)</td></tr>
             </table>
         </div>
     );
